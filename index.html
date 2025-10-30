@@ -3,765 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurion - AI Solutions, Web Design & Graphic Design</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" href="https://aurionsa.wordpress.com/wp-content/uploads/2025/04/whatsapp_image_2025-04-08_at_15.40.02-removebg-preview-e1752063167836.png" type="image/png">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-936RHVHQ8W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <title>Proforma Invoice</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  gtag('config', 'G-936RHVHQ8W');
-</script>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
 
+        .invoice-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 3px solid #b8dde8;
+        }
+
+        .invoice-header {
+            padding: 30px 40px;
+            border-bottom: 3px solid #b8dde8;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .company-section { flex: 1; }
+
+        .company-logo {
+            max-width: 150px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        .header-left { font-size: 13px; line-height: 1.8; color: #333; }
+        .header-left .label { display: inline-block; width: 150px; }
+
+        .invoice-title-section { text-align: right; }
+        .invoice-type { color: #00bcd4; font-size: 13px; font-weight: bold; text-transform: uppercase; margin-bottom: 5px; }
+        .invoice-number { font-size: 28px; font-weight: bold; color: #333; }
+
+        .customer-info-section {
+            padding: 20px 40px;
+            background-color: #ffffff;
+            border-bottom: 3px solid #b8dde8;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-row { display: flex; margin-bottom: 8px; font-size: 13px; }
+        .info-label { min-width: 150px; color: #666; }
+        .info-value { font-weight: bold; color: #333; }
+
+        .items-section { padding: 0; }
+
+        .items-table { width: 100%; border-collapse: collapse; }
+        .items-table thead { background-color: #d4eef5; }
+        .items-table th {
+            padding: 12px 15px; text-align: left; font-size: 12px; font-weight: bold; color: #333;
+            text-transform: uppercase; border-bottom: 2px solid #b8dde8;
+        }
+        .items-table th:nth-child(2), .items-table th:nth-child(3), .items-table th:nth-child(4) { text-align: center; }
+
+        .items-table tbody tr { border-bottom: 1px solid #e0e0e0; }
+        .items-table tbody tr:last-child { border-bottom: none; }
+
+        .items-table td { padding: 15px; font-size: 12px; color: #333; vertical-align: top; }
+        .items-table td:nth-child(2), .items-table td:nth-child(3), .items-table td:nth-child(4) { text-align: center; }
+
+        .product-name { font-weight: bold; margin-bottom: 4px; font-size: 13px; }
+        .product-detail { font-size: 11px; color: #666; line-height: 1.5; margin-bottom: 2px; }
+
+        .totals-section { background-color: #d4eef5; padding: 20px 40px; }
+        .totals-table { width: 100%; max-width: 400px; margin-left: auto; }
+        .totals-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; }
+        .totals-row.total {
+            background-color: #00bcd4; color: #ffffff; font-weight: bold; font-size: 16px;
+            padding: 12px 15px; margin-top: 5px;
+        }
+
+        .payment-section {
+            padding: 30px 40px;
+            background-color: #ffffff;
+            border-bottom: 3px solid #b8dde8;
+        }
+
+        .payment-section h3 {
+            color: #00bcd4;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .payment-intro { font-size: 13px; color: #333; margin-bottom: 20px; line-height: 1.6; }
+        .bank-details { display: flex; gap: 30px; margin-bottom: 25px; flex-wrap: wrap; }
+
+        .bank-item { flex: 1; min-width: 200px; }
+        .bank-item h4 { font-size: 13px; font-weight: bold; color: #333; margin-bottom: 8px; }
+        .bank-item p { font-size: 12px; color: #666; line-height: 1.6; }
+
+        .terms-section { margin-top: 20px; }
+        .terms-section p { font-size: 12px; color: #666; line-height: 1.6; }
+
+        .footer-section {
+            padding: 25px 40px;
+            background-color: #d4eef5;
+            border-top: 3px solid #b8dde8;
+            text-align: center;
+            font-size: 11px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .footer-section strong { font-weight: bold; }
+
+        .page-number { text-align: center; padding: 15px; font-size: 12px; color: #666; }
+
+        @media print {
+            body { padding: 0; background-color: #ffffff; }
+            .invoice-container { border: none; }
+        }
+
+        @media (max-width: 768px) {
+            .invoice-header, .customer-info-section { flex-direction: column; }
+            .invoice-title-section { text-align: left; margin-top: 20px; }
+            .items-table { font-size: 11px; }
+            .items-table th, .items-table td { padding: 10px 8px; }
+        }
+        
+        
+    </style>
 </head>
+<button id="downloadBtn" style="margin: 20px; padding: 10px 20px; background: #00bcd4; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+  Download PDF
+</button>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="https://aurionsa.wordpress.com/wp-content/uploads/2025/04/whatsapp_image_2025-04-08_at_15.40.02-removebg-preview-e1752063167836.png" alt="Aurion Logo" class="logo" id="stickyLogo">
-                <span class="logo-text" id="stickyheader">AURION</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Get a Qoute</a></li>
-                <li><a href="#pricing" class="nav-link pricing-link">Pricing</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="gradient-text">WORK WITH US</span>
-                </h1>
-                <h2 class="hero-subtitle">YOUR VISION IN THE DIGITAL WORLD</h2>
-                <p class="hero-description">
-                    Welcome to Aurion, where design meets intelligence. We’re a creative studio that blends web design, branding, and AI-powered solutions to help businesses stand out, connect meaningfully, and grow with purpose. Whether you're building a digital presence from scratch or refining your brand’s impact, Aurion is your partner in crafting experiences that captivate and convert.
-                </p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="scrollToSection('services')">Learn More</button>
-                    <button class="btn btn-secondary" onclick="scrollToSection('contact')">Get Started</button>
+    <div class="invoice-container">
+        <div class="invoice-header">
+            <div class="company-section">
+                <img src="https://aurionsa.wordpress.com/wp-content/uploads/2025/04/whatsapp_image_2025-04-08_at_15.40.02-removebg-preview-1-1.png" alt="Company Logo" class="company-logo">
+                <div class="header-left">
+                    <div><span class="label">Date</span> {{invoice_date}}</div>
+                    <div><span class="label">Project Reference</span> {{project_reference}}</div>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="hero-shapes">
-                    <div class="shape shape-1"></div>
-                    <div class="shape shape-2"></div>
-                    <div class="shape shape-3"></div>
-                    <div class="shape shape-4"></div>
+            <div class="invoice-title-section">
+                <div class="invoice-type">Proforma Invoice</div>
+                <div class="invoice-number">{{invoice_number}}</div>
+            </div>
+        </div>
+
+        <div class="customer-info-section">
+            <div class="customer-info-left">
+                <div class="info-row">
+                    <span class="info-label">Customer Name</span>
+                    <span class="info-value">{{customer_name}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Email</span>
+                    <span class="info-value">{{customer_email}}</span>
+                </div>
+            </div>
+            <div class="customer-info-right">
+                <div class="info-row">
+                    <span class="info-label">Phone</span>
+                    <span class="info-value">{{customer_phone}}</span>
                 </div>
             </div>
         </div>
-    </section>
-    <script>
-      document.getElementById('stickyLogo').addEventListener('click', function() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
-    </script>
-        <script>
-      document.getElementById('stickyheader').addEventListener('click', function() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
-    </script>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">WELCOME TO AURION</h2>
-                <p class="section-subtitle">
-                    Aurion is a digital solutions company dedicated to empowering businesses through intelligent technology and modern design.
-                </p>
-                <p class="section-description">
-                    We specialize in AI-driven tools, data-powered insights, and responsive web experiences that help organizations streamline operations, enhance customer engagement, and stay ahead in a rapidly evolving digital landscape.
-                </p>
-            </div>
+        <div class="items-section">
+            <table class="items-table">
+                <thead>
+                    <tr>
+                        <th>SERVICE DESCRIPTION</th>
+                        <th>QTY</th>
+                        <th>UNIT PRICE</th>
+                        <th>AMOUNT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="product-name">{{service_name_1}}</div>
+                            <div class="product-detail">{{service_description_1}}</div>
+                        </td>
+                        <td>{{quantity_1}}</td>
+                        <td>{{unit_price_1}}</td>
+                        <td>{{amount_1}}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-name">{{service_name_2}}</div>
+                            <div class="product-detail">{{service_description_2}}</div>
+                        </td>
+                        <td>{{quantity_2}}</td>
+                        <td>{{unit_price_2}}</td>
+                        <td>{{amount_2}}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-name">{{service_name_3}}</div>
+                            <div class="product-detail">{{service_description_3}}</div>
+                        </td>
+                        <td>{{quantity_3}}</td>
+                        <td>{{unit_price_3}}</td>
+                        <td>{{amount_3}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            <div class="services-grid">
-                <div class="service-card" data-service="ai">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>AI Solutions</h3>
-                    <p>Cutting-edge artificial intelligence solutions to automate and optimize your business processes.</p>
-                    <div class="service-features">
-                        <span>AI Chatbots</span>
-                        <span>Data Analytics</span>
-                        <span>Process Automation</span>
-                    </div>
-                </div>
+        <div class="totals-section">
+            <div class="totals-table">
 
-                <div class="service-card" data-service="web">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Web Design</h3>
-                    <p>Modern, responsive websites that engage your audience and drive business growth.</p>
-                    <div class="service-features">
-                        <span>Responsive Design</span>
-                        <span>E-commerce</span>
-                        <span>CMS Development</span>
-                    </div>
-                </div>
-
-                <div class="service-card" data-service="graphic">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Graphic Design</h3>
-                    <p>Creative visual solutions that communicate your brand message effectively.</p>
-                    <div class="service-features">
-                        <span>Brand Identity</span>
-                        <span>Print Design</span>
-                        <span>Digital Graphics</span>
-                    </div>
+                <div class="totals-row total">
+                    <span>TOTAL</span>
+                    <span>{{total}}</span>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">OUR WORK</h2>
-                <p class="section-subtitle">
-                    We set the industry standard as our clients work with high-caliber creatives and engineers.
+        <div class="page-number">1 of 1</div>
+
+        <div class="payment-section">
+            <h3>EFT/BANK PAYMENTS</h3>
+            <p class="payment-intro">Please pay <strong>{{total}}</strong> using reference <strong>{{invoice_number}}</strong></p>
+
+            <div class="bank-details">
+                <div class="bank-item">
+                    <h4>ABSA</h4>
+                    <p>Acc Name: Thato Kgopa<br>Acc No: 9298 697 256<br>Branch: 632005</p>
+                </div>
+            </div>
+
+            <div class="terms-section">
+              <h3>Reference</h3>
+              <p>Please use the reference {{invoice_number}} when making deposits or payments.<br>
+Please verify your payment terms with your Account Manager.</p><br>
+                <h3>TERMS & CONDITIONS</h3>
+                <p>
+                  All work remains property of Aurion until full payment is received.<br>
+Expected turnaround time is 3-4 weeks<br>
+Aurion is deemed the webmaster of the built website and the set fee will be payable monthly.<br>
+No refunds on completed services.<br>
+By making payment, the client agrees to these terms.
                 </p>
             </div>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800" alt="AI Dashboard Project">
-                        <div class="project-overlay">
-                            <h4>AI Analytics Dashboard</h4>
-                            <p>Machine Learning Platform</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.pexels.com/photos/326508/pexels-photo-326508.jpeg?auto=compress&cs=tinysrgb&w=800" alt="E-commerce Website">
-                        <div class="project-overlay">
-                            <h4>E-commerce Platform</h4>
-                            <p>Modern Online Store</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Brand Identity">
-                        <div class="project-overlay">
-                            <h4>Brand Identity Design</h4>
-                            <p>Complete Visual System</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mobile App">
-                        <div class="project-overlay">
-                            <h4>Mobile Application</h4>
-                            <p>iOS & Android App</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Corporate Website">
-                        <div class="project-overlay">
-                            <h4>Corporate Website</h4>
-                            <p>Professional Business Site</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Marketing Materials">
-                        <div class="project-overlay">
-                            <h4>Marketing Campaign</h4>
-                            <p>Digital & Print Materials</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">WHY PARTNER WITH AURION</h2>
-                    <div class="about-features">
-                        <div class="feature">
-                            <h4>Smart Tools. Custom Solutions. Real Results.</h4>
-                            <p>From AI integrations to tailored web platforms, we combine creativity with cutting-edge tech to solve real business problems.</p>
-                        </div>
-                        <div class="feature">
-                            <h4>Fresh Perspective from a Bold, Young Team</h4>
-                            <p>We’re a new-generation studio with the energy, adaptability, and cultural insight to create work that feels current, and ahead of its time.</p>
-                        </div>
-                        <div class="feature">
-                            <h4>Real Collaboration, No Corporate BS</h4>
-                            <p>We’re approachable, transparent, and move fast. You’ll always know who you’re working with, and what’s happening next.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-images">
-                    <div class="image-grid">
-                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Team collaboration">
-                        <img src="https://aurionsa.wordpress.com/wp-content/uploads/2025/04/gettyimages-2169040453-2048x2048-1.jpg" alt="Creative workspace">
-                        <img src="https://aurionsa.wordpress.com/wp-content/uploads/2025/04/gettyimages-1069861272-2048x2048-1.jpg" alt="Design process">
-                    </div>
-                </div>
-            </div>
+        <div class="footer-section">
+            <strong>Tel:</strong> 067 286 2136 | <strong>Web:</strong> aurioncreative.com<br>
+            <strong>Email:</strong> info@aurioncreative.com<br>
+            <strong>Address</strong> 286 Hillcrest Pretoria Gauteng<br>
         </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">OUR PRICING</h2>
-                <p class="section-subtitle">Choose the perfect plan for your needs</p>
-            </div>
-
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>AI Chatbots</h3>
-                    <div class="price">From R1499/mo</div>
-                    <ul class="pricing-features">
-                        <li>Custom AI Model Development</li>
-                        <li>Data Analysis & Insights</li>
-                        <li>Process Automation</li>
-                        <li>24/7 Support</li>
-                    </ul>
-                    <a href="https://aurionsa.wordpress.com/wp-content/uploads/2025/07/ai-chatbots-pricing-plan.pdf" download class="btn btn-primary">Download PDF</a>
-                </div>
-
-                <div class="pricing-card featured">
-                    <h3>Web Design</h3>
-                    <div class="price">From R499/mo</div>
-                    <ul class="pricing-features">
-                        <li>Responsive Design</li>
-                        <li>CMS Integration</li>
-                        <li>SEO Optimization</li>
-                        <li>Maintenance & Support</li>
-                    </ul>
-                    <a href="https://aurionsa.wordpress.com/wp-content/uploads/2025/09/cream-minimal-social-media-strategy-pricing-table-document-1.pdf" download class="btn btn-primary">Download PDF</a>
-                </div>
-
-                <div class="pricing-card">
-                    <h3>Graphic Design</h3>
-                    <div class="price">From <br>R500</div>
-                    <ul class="pricing-features">
-                        <li>Brand Identity Design</li>
-                        <li>Print & Digital Materials</li>
-                        <li>Logo Design</li>
-                        <li>Unlimited Revisions</li>
-                    </ul>
-                    <a href="https://aurionsa.wordpress.com/wp-content/uploads/2025/07/graphic-design-pricing-1.pdf" download class="btn btn-primary">Download PDF</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <h3>Stay Updated</h3>
-                <p>Subscribe to our newsletter for the latest updates and insights</p>
-                <form action="https://formspree.io/f/xpwrvwzr" method="POST" class="newsletter-form" id="newsletterForm">
-                    <input type="email" name="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </section>
-<script>
-document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const form = e.target;
-  const data = new FormData(form);
-  const button = form.querySelector('button');
-
-  // Show loading state
-  button.disabled = true;
-  button.innerHTML = '<span class="loader"></span> Subscribing...';
-
-  fetch(form.action, {
-    method: 'POST',
-    body: data,
-    headers: { 'Accept': 'application/json' }
-  }).then(response => {
-    if (response.ok) {
-      form.innerHTML = `
-        <p class="newsletter-message success">Thanks for subscribing! You'll hear from us soon.</p>
-      `;
-    } else {
-      form.innerHTML = `
-        <p class="newsletter-message error">Something went wrong. Please try again later.</p>
-      `;
-    }
-  });
-});
-</script>
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2>Get a Free Quote</h2>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email Us</h4>
-                                <p>info@aurioncreative.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Call Us</h4>
-                                <p>067-286-2136</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Visit Us</h4>
-                                <p>286 Hillcrest<br>Pretoria, Gauteng</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="office-hours">
-                        <h4>OFFICE HOURS</h4>
-                        <p>Monday - Friday: 9am - 6pm<br>
-                        Saturday: 10am - 4pm<br>
-                        Sunday: Closed</p>
-                    </div>
-                </div>
-  <!-- Add this before your contact form -->
-<div class="cart-section" style="display: none;" id="cartSection">
-    <h3>Your Selected Services</h3>
-    <div id="cartItems"></div>
-    <button type="button" class="btn btn-secondary" onclick="editCart()">Edit Cart</button>
-</div>
-
-<script>
-// Simple cart functionality
-let cart = [];
-
-function addToCart(service, price) {
-    cart.push({ service, price });
-    updateCartDisplay();
-}
-
-function updateCartDisplay() {
-    const cartItems = document.getElementById('cartItems');
-    const cartSection = document.getElementById('cartSection');
-    
-    if (cart.length > 0) {
-        cartSection.style.display = 'block';
-        cartItems.innerHTML = cart.map(item => 
-            `<div class="cart-item">${item.service} - R${item.price}</div>`
-        ).join('');
-    } else {
-        cartSection.style.display = 'none';
-    }
-}
-
-function editCart() {
-    cart = [];
-    updateCartDisplay();
-}
-</script>
-<!-- Add this in place of your existing contact form -->
-<div class="contact-form">
-  <form id="multiStepForm" action="https://formspree.io/f/xblynjkv" method="POST">
-
-    <!-- Progress Bar -->
-    <div class="progress-bar">
-      <div id="progressStep1" class="progress-step active"></div>
-      <div id="progressStep2" class="progress-step"></div>
     </div>
-
-<!-- Step 1 -->
-<div class="form-step" id="step1">
-  <div class="form-group">
-    <input type="text" name="name" id="name" placeholder="Your Name" required>
-    <small class="error-message"></small>
-  </div>
-  <div class="form-group">
-    <input type="email" name="email" id="email" placeholder="Your Email" required>
-    <small class="error-message"></small>
-  </div>
-  <div class="form-group">
-    <input type="text" name="company" id="company" placeholder="Company Name (Optional)">
-    <small class="error-message"></small>
-  </div>
-  <div class="form-group">
-    <input type="tel" name="phone" id="phone" placeholder="Your Phone Number" required>
-    <small class="error-message"></small>
-  </div>
-  <div class="form-group">
-    <select name="service" id="serviceSelect" required>
-      <option value="">Select Service</option>
-      <option value="AI Solutions">AI Solutions</option>
-      <option value="Web Design">Web Design</option>
-      <option value="Graphic Design">Graphic Design</option>
-      <option value="Other">Other</option>
-    </select>
-    <small class="error-message"></small>
-  </div>
-  <button type="button" class="btn btn-primary" onclick="goToStep2()">Next</button>
-</div>
-
-<!-- Step 2 -->
-<div class="form-step" id="step2" style="display: none;">
-  <div class="form-group" id="budgetGroup">
-    <input type="number" name="budget" placeholder="Your Budget" min="0" step="1" required>
-    <small class="error-message"></small>
-  </div>
-  <div class="form-group">
-    <textarea name="message" placeholder="Optional message..." rows="5"></textarea>
-    <small class="error-message"></small>
-  </div>
-  <button type="button" class="btn btn-secondary" onclick="goBackToStep1()">Back</button>
-  <button type="submit" class="btn btn-primary">Send Message</button>
-</div>
-
-  </form>
-</div>
-
-<style>
-  .progress-bar {
-    display: flex;
-    margin-bottom: 20px;
-  }
-  .progress-step {
-    flex: 1;
-    height: 5px;
-    background: #ccc;
-    margin: 0 5px;
-    border-radius: 4px;
-    transition: background 0.3s;
-  }
-  .progress-step.active {
-    background: #007bff;
-  }
-</style>
+    
+<!-- jsPDF and html2canvas libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script>
-function goToStep2() {
-  const fields = [
-    { id: 'name', name: "Name", required: true, type: 'text' },
-    { id: 'email', name: "Email", required: true, type: 'email' },
-    { id: 'phone', name: "Phone", required: true, type: 'tel' },
-    { id: 'serviceSelect', name: "Service", required: true, type: 'select' },
-  ];
+document.getElementById("downloadBtn").addEventListener("click", async function() {
+  const { jsPDF } = window.jspdf;
 
-  let isValid = true;
+  // Select the invoice container
+  const invoice = document.querySelector(".invoice-container");
 
-  fields.forEach(field => {
-    const input = document.getElementById(field.id);
-    const errorMsg = input.parentElement.querySelector('.error-message');
-    errorMsg.textContent = '';
+  // Create canvas snapshot of the invoice
+  const canvas = await html2canvas(invoice, { scale: 2 });
+  const imgData = canvas.toDataURL("image/png");
 
-    if (field.required) {
-      if (field.type === 'text' && !input.value.trim()) {
-        errorMsg.textContent = `${field.name} is required`;
-        isValid = false;
-      } else if (field.type === 'email' && !input.validity.valid) {
-        errorMsg.textContent = `Please enter a valid ${field.name.toLowerCase()}`;
-        isValid = false;
-      } else if (field.type === 'tel' && !input.value.trim()) {
-        errorMsg.textContent = `${field.name} is required`;
-        isValid = false;
-      } else if (field.type === 'select' && !input.value) {
-        errorMsg.textContent = `Please select a ${field.name.toLowerCase()}`;
-        isValid = false;
-      }
+  // Create PDF in portrait A4 size
+  const pdf = new jsPDF("p", "mm", "a4");
+  const pageWidth = pdf.internal.pageSize.getWidth();
+  const pageHeight = pdf.internal.pageSize.getHeight();
+
+  // Convert canvas dimensions to fit A4
+  const imgWidth = pageWidth;
+  const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+  let position = 0;
+
+  // Handle long invoices (multiple pages)
+  if (imgHeight > pageHeight) {
+    let heightLeft = imgHeight;
+
+    while (heightLeft > 0) {
+      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+      if (heightLeft > 0) pdf.addPage();
+      position -= pageHeight;
     }
-  });
-
-  if (!isValid) {
-    return;
+  } else {
+    pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
   }
 
-  // Hide step 1, show step 2
-  document.getElementById('step1').style.display = 'none';
-  document.getElementById('step2').style.display = 'block';
-
-  // Show/hide budget based on service
-  const budgetGroup = document.getElementById('budgetGroup');
-  budgetGroup.style.display = document.getElementById('serviceSelect').value === 'Other' ? 'none' : 'block';
-
-  // Clear errors on step 2 just in case
-  document.querySelectorAll('#step2 .error-message').forEach(em => em.textContent = '');
-}
-
-function goBackToStep1() {
-  document.getElementById('step2').style.display = 'none';
-  document.getElementById('step1').style.display = 'block';
-}
-</script>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="https://aurionsa.wordpress.com/wp-content/uploads/2025/04/whatsapp_image_2025-04-08_at_15.40.02-removebg-preview-e1752063167836.png" alt="Aurion Logo" class="logo">
-                    <span class="logo-text">AURION</span>
-                </div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#services">Services</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/company/aurioncreative/"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/aurion_creative/"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Aurion. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    
-    <script src="https://cdn.botpress.cloud/webchat/v3.1/inject.js" defer></script>
-<script src="https://files.bpcontent.cloud/2025/07/10/06/20250710065531-EU2FXP21.js" defer></script>
-    <div class="cursor-follower"></div>
-
-<script>
-  document.addEventListener('mousemove', (e) => {
-  const dot = document.createElement('div');
-  dot.classList.add('trail-dot');
-
-  // Detect if cursor is over a link
-  const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
-  const isHoveringLink = hoveredElement && hoveredElement.closest('a');
-
-  // Change color if hovering over link
-  if (isHoveringLink) {
-    dot.style.background = '#00bcd4'; // blue for links
-    dot.style.boxShadow = '0 0 6px 2px rgba(0, 188, 212, 0.6)';
-  }
-
-  dot.style.left = `${e.clientX}px`;
-  dot.style.top = `${e.clientY}px`;
-  document.body.appendChild(dot);
-
-  // Fade out and remove
-  setTimeout(() => {
-    dot.style.opacity = '0';
-    setTimeout(() => dot.remove(), 400); // remove after fade
-  }, 10);
+  // Save PDF with invoice number (if available)
+  const invoiceNumber = invoice.querySelector(".invoice-number")?.textContent.trim() || "invoice";
+  pdf.save(`${invoiceNumber}.pdf`);
 });
-
-</script>
-<div class="custom-cursor"></div>
-<script>
-  const cursor = document.querySelector('.custom-cursor');
-
-let x = 0, y = 0;
-let targetX = 0, targetY = 0;
-
-document.addEventListener('mousemove', (e) => {
-  targetX = e.clientX;
-  targetY = e.clientY;
-});
-
-// Smooth animation
-function animate() {
-  x += (targetX - x) * 0.15;
-  y += (targetY - y) * 0.15;
-  cursor.style.left = x + 'px';
-  cursor.style.top = y + 'px';
-  requestAnimationFrame(animate);
-}
-animate();
-
-// Grow cursor on hover
-const interactiveElements = document.querySelectorAll('a, button, .btn, input[type="submit"]');
-
-interactiveElements.forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-});
-
 </script>
 
-
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function() {
-    emailjs.init("OuOiPPkFs8F68YYyH");
-  })();
-
-  document.getElementById("multiStepForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const serviceID = "service_xvdnk3y";
-    const templateID = "template_sz1jcum";
-
-    const invoiceNumber = "INV-" + Math.floor(100000 + Math.random() * 900000);
-    const today = new Date().toLocaleDateString();
     
-    // Get form values
-    const budgetInput = document.querySelector("[name='budget']");
-    const serviceAmount = budgetInput ? budgetInput.value : "TBD";
-    const serviceType = document.getElementById("serviceSelect").value;
-
-    // Calculate amounts based on service type
-    let serviceName, unitPrice, quantity = 1;
     
-    switch(serviceType) {
-      case "AI Solutions":
-        serviceName = "AI Solutions Package";
-        unitPrice = serviceAmount !== "TBD" ? serviceAmount : "1499";
-        break;
-      case "Web Design":
-        serviceName = "Web Design Package";
-        unitPrice = serviceAmount !== "TBD" ? serviceAmount : "499";
-        break;
-      case "Graphic Design":
-        serviceName = "Graphic Design Package";
-        unitPrice = serviceAmount !== "TBD" ? serviceAmount : "500";
-        break;
-      default:
-        serviceName = serviceType;
-        unitPrice = serviceAmount;
-    }
-
-    // ========== ENHANCED TEMPLATE PARAMS ==========
-    const templateParams = {
-      // Customer Information
-      customer_name: document.getElementById("name").value,
-      customer_email: document.getElementById("email").value,
-      customer_phone: document.getElementById("phone") ? document.getElementById("phone").value : "Provided by customer",
-      
-      // Invoice Information
-      invoice_number: invoiceNumber,
-      invoice_date: today,
-      project_reference: "PRJ-" + Math.floor(1000 + Math.random() * 9000),
-      
-      // Service Items - Enhanced with multiple services
-      service_name_1: serviceName,
-      service_description_1: getServiceDescription(serviceType),
-      quantity_1: quantity,
-      unit_price_1: formatCurrency(unitPrice),
-      amount_1: formatCurrency(serviceAmount !== "TBD" ? serviceAmount : unitPrice),
-      
-      // Additional services
-      service_name_2: "Website Maintenance & Support",
-      service_description_2: "Monthly maintenance, updates, and technical support",
-      quantity_2: 1,
-      unit_price_2: "R200",
-      amount_2: "R200",
-      
-      service_name_3: "Project Setup Fee",
-      service_description_3: "Initial project setup and configuration",
-      quantity_3: 1,
-      unit_price_3: "R500",
-      amount_3: "R500",
-      
-      // Totals
-      total: calculateTotal(serviceAmount, unitPrice),
-      
-      // Email delivery
-      to_email: document.getElementById("email").value
-    };
-
-    console.log("Sending invoice with params:", templateParams);
-
-    emailjs.send(serviceID, templateID, templateParams)
-      .then(() => {
-        alert("✅ Proforma Invoice has been sent successfully!");
-        document.getElementById("multiStepForm").reset();
-        // Reset form steps
-        document.getElementById('step1').style.display = 'block';
-        document.getElementById('step2').style.display = 'none';
-      })
-      .catch((err) => {
-        console.error("Error sending invoice:", err);
-        alert("❌ Failed to send invoice. Please try again. Check console for details.");
-      });
-  });
-</script>
-
-<script>
-// ========== EMAILJS HELPER FUNCTIONS ==========
-
-function getServiceDescription(serviceType) {
-  const descriptions = {
-    "AI Solutions": "Custom AI chatbot development and integration with machine learning capabilities",
-    "Web Design": "Responsive website design and development with modern frameworks",
-    "Graphic Design": "Custom branding, logo design, and visual identity development"
-  };
-  return descriptions[serviceType] || "Custom service solution tailored to your business needs";
-}
-
-function calculateTotal(serviceAmount, unitPrice) {
-  const mainAmount = serviceAmount !== "TBD" ? parseInt(serviceAmount) : parseInt(unitPrice);
-  const additionalAmount = 200; // From service 2 (Website Maintenance)
-  const setupFee = 500; // From service 3 (Project Setup Fee)
-  const totalAmount = mainAmount + additionalAmount + setupFee;
-  return "R" + totalAmount.toLocaleString();
-}
-
-function formatCurrency(amount) {
-  if (amount === "TBD" || !amount) return "TBD";
-  return "R" + parseInt(amount).toLocaleString();
-}
-</script>
-
 </body>
 </html>
