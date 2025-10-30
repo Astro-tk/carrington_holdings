@@ -1,191 +1,214 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrington Holdings - Business Funding Solutions</title>
-    <meta name="description" content="Carrington Holdings provides comprehensive business financial solutions across South Africa. Funding, debt restructuring, property equity release, sales execution assistance, and mediation services with no upfront fees.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {}
-            }
-        }
-    </script>
-    <style>
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1e3a8a 100%);
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #1e3a8a, #1e40af);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #1e40af, #1e3a8a);
-            transform: translateY(-1px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .logo-container {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .logo-container img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-    </style>
+    <title>Aurion - AI Solutions, Web Design & Graphic Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="https://aurionsa.wordpress.com/wp-content/uploads/2025/04/whatsapp_image_2025-04-08_at_15.40.02-removebg-preview-e1752063167836.png" type="image/png">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-936RHVHQ8W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-936RHVHQ8W');
+</script>
+
 </head>
-<body class="smooth-scroll">
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <div class="logo-container mr-4">
-                        <img src="https://aurionsa.wordpress.com/wp-content/uploads/2025/07/screenshot_2025-07-09_152206-removebg-preview.png" alt="Carrington Holdings Logo" />
-                    </div>
-                    <div>
-                        <h1 class="text-xl font-bold text-gray-900">Carrington Holdings</h1>
-                        <p class="text-sm text-gray-600">Business Financial Solutions</p>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#about" class="text-gray-700 hover:text-blue-900 transition-colors">About</a>
-                    <a href="#services" class="text-gray-700 hover:text-blue-900 transition-colors">Services</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-900 transition-colors">Contact</a>
-                    <a href="#contact" class="btn-primary text-white px-4 py-2 rounded-lg">
-                        Get Funding
-                    </a>
-                </div>
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://aurionsa.wordpress.com/wp-content/uploads/2025/04/whatsapp_image_2025-04-08_at_15.40.02-removebg-preview-e1752063167836.png" alt="Aurion Logo" class="logo" id="stickyLogo">
+                <span class="logo-text" id="stickyheader">AURION</span>
             </div>
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <div class="flex flex-col space-y-2">
-                    <a href="#about" class="text-gray-700 hover:text-blue-900 transition-colors py-2">About</a>
-                    <a href="#services" class="text-gray-700 hover:text-blue-900 transition-colors py-2">Services</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-900 transition-colors py-2">Contact</a>
-                    <a href="#contact" class="btn-primary text-white px-4 py-2 rounded-lg text-center mt-2">
-                        Get Funding
-                    </a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#pricing" class="nav-link pricing-link">Pricing</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">WORK WITH US</span>
+                </h1>
+                <h2 class="hero-subtitle">YOUR VISION IN THE DIGITAL WORLD</h2>
+                <p class="hero-description">
+                    Welcome to Aurion, where design meets intelligence. We’re a creative studio that blends web design, branding, and AI-powered solutions to help businesses stand out, connect meaningfully, and grow with purpose. Whether you're building a digital presence from scratch or refining your brand’s impact, Aurion is your partner in crafting experiences that captivate and convert.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('services')">Learn More</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('contact')">Get Started</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                    <div class="shape shape-4"></div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
+    <script>
+      document.getElementById('stickyLogo').addEventListener('click', function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+    </script>
+        <script>
+      document.getElementById('stickyheader').addEventListener('click', function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+    </script>
 
-    <!-- Hero Section -->
-    <section class="hero-gradient text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                        Comprehensive Business 
-                        <span class="text-blue-200 block">Financial Solutions</span>
-                    </h2>
-                    <p class="text-xl text-blue-100 mb-8 leading-relaxed">
-                        From funding and debt restructuring to property equity release and mediation services. We provide complete financial solutions to help South African businesses thrive.
-                    </p>
-                    <div class="bg-blue-800 bg-opacity-50 p-6 rounded-lg mb-8 border border-blue-700">
-                        <div class="flex items-center mb-2">
-                            <svg class="w-5 h-5 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="font-semibold text-blue-100">Transparent Fee Structure</span>
-                        </div>
-                        <p class="text-blue-200 text-sm">
-                            We’ll walk you through any costs — no surprises, no hidden charges.
-                        </p>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">WELCOME TO AURION</h2>
+                <p class="section-subtitle">
+                    Aurion is a digital solutions company dedicated to empowering businesses through intelligent technology and modern design.
+                </p>
+                <p class="section-description">
+                    We specialize in AI-driven tools, data-powered insights, and responsive web experiences that help organizations streamline operations, enhance customer engagement, and stay ahead in a rapidly evolving digital landscape.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-service="ai">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
                     </div>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center">
-                            Get Started Today
-                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                        <a href="#services" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-colors inline-flex items-center justify-center">
-                            View Services
-                        </a>
+                    <h3>AI Solutions</h3>
+                    <p>Cutting-edge artificial intelligence solutions to automate and optimize your business processes.</p>
+                    <div class="service-features">
+                        <span>AI Chatbots</span>
+                        <span>Data Analytics</span>
+                        <span>Process Automation</span>
                     </div>
                 </div>
-                <div class="hidden lg:block fade-in">
-                    <div class="bg-white bg-opacity-10 p-8 rounded-2xl backdrop-blur-sm">
-                        <div class="grid grid-cols-2 gap-6">
-                            <div class="text-center">
-                                <div class="bg-blue-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="font-semibold text-lg mb-2">Fast Solutions</h3>
-                                <p class="text-blue-200 text-sm">Quick decisions on all financial services</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="bg-blue-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="font-semibold text-lg mb-2">Local Expertise</h3>
-                                <p class="text-blue-200 text-sm">Deep understanding of South African business needs</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="bg-blue-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="font-semibold text-lg mb-2">Flexible Terms</h3>
-                                <p class="text-blue-200 text-sm">Tailored solutions to fit your business</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="bg-blue-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="font-semibold text-lg mb-2">No Hidden Fees</h3>
-                                <p class="text-blue-200 text-sm">Transparent pricing with no surprises</p>
-                            </div>
+
+                <div class="service-card" data-service="web">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Design</h3>
+                    <p>Modern, responsive websites that engage your audience and drive business growth.</p>
+                    <div class="service-features">
+                        <span>Responsive Design</span>
+                        <span>E-commerce</span>
+                        <span>CMS Development</span>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="graphic">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Creative visual solutions that communicate your brand message effectively.</p>
+                    <div class="service-features">
+                        <span>Brand Identity</span>
+                        <span>Print Design</span>
+                        <span>Digital Graphics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">OUR WORK</h2>
+                <p class="section-subtitle">
+                    We set the industry standard as our clients work with high-caliber creatives and engineers.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800" alt="AI Dashboard Project">
+                        <div class="project-overlay">
+                            <h4>AI Analytics Dashboard</h4>
+                            <p>Machine Learning Platform</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/326508/pexels-photo-326508.jpeg?auto=compress&cs=tinysrgb&w=800" alt="E-commerce Website">
+                        <div class="project-overlay">
+                            <h4>E-commerce Platform</h4>
+                            <p>Modern Online Store</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Brand Identity">
+                        <div class="project-overlay">
+                            <h4>Brand Identity Design</h4>
+                            <p>Complete Visual System</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mobile App">
+                        <div class="project-overlay">
+                            <h4>Mobile Application</h4>
+                            <p>iOS & Android App</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Corporate Website">
+                        <div class="project-overlay">
+                            <h4>Corporate Website</h4>
+                            <p>Professional Business Site</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Marketing Materials">
+                        <div class="project-overlay">
+                            <h4>Marketing Campaign</h4>
+                            <p>Digital & Print Materials</p>
                         </div>
                     </div>
                 </div>
@@ -194,558 +217,551 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Who We Are</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Carrington Holdings is a proudly South African company that specializes in comprehensive business financial solutions, from funding to debt restructuring and mediation services.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <div class="text-center fade-in">
-                    <div class="bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">WHY PARTNER WITH AURION</h2>
+                    <div class="about-features">
+                        <div class="feature">
+                            <h4>Smart Tools. Custom Solutions. Real Results.</h4>
+                            <p>From AI integrations to tailored web platforms, we combine creativity with cutting-edge tech to solve real business problems.</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Fresh Perspective from a Bold, Young Team</h4>
+                            <p>We’re a new-generation studio with the energy, adaptability, and cultural insight to create work that feels current, and ahead of its time.</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Real Collaboration, No Corporate BS</h4>
+                            <p>We’re approachable, transparent, and move fast. You’ll always know who you’re working with, and what’s happening next.</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">National Service</h3>
-                    <p class="text-gray-600">
-                        We provide comprehensive financial solutions across South Africa, understanding the unique challenges and opportunities in our market.
-                    </p>
                 </div>
-                <div class="text-center fade-in">
-                    <div class="bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                        </svg>
+                <div class="about-images">
+                    <div class="image-grid">
+                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Team collaboration">
+                        <img src="https://aurionsa.wordpress.com/wp-content/uploads/2025/04/gettyimages-2169040453-2048x2048-1.jpg" alt="Creative workspace">
+                        <img src="https://aurionsa.wordpress.com/wp-content/uploads/2025/04/gettyimages-1069861272-2048x2048-1.jpg" alt="Design process">
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Growth & Recovery Focused</h3>
-                    <p class="text-gray-600">
-                        Our mission is to help South African businesses grow, recover, and thrive through comprehensive financial solutions and expert guidance.
-                    </p>
-                </div>
-                <div class="text-center fade-in">
-                    <div class="bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Transparent Approach</h3>
-                    <p class="text-gray-600">
-                        We believe in complete transparency. No hidden fees, no surprises – just honest, straightforward financial solutions and mediation services.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What We Offer</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Comprehensive financial solutions tailored to your business needs
-                </p>
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">OUR PRICING</h2>
+                <p class="section-subtitle">Choose the perfect plan for your needs</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Funding Services -->
-                <div class="bg-gray-50 p-8 rounded-xl card-hover fade-in">
-                    <div class="bg-blue-900 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Working Capital Loans</h3>
-                    <p class="text-gray-600 mb-6">
-                        Access the cash flow you need to cover operational expenses, payroll, and day-to-day business needs.
-                    </p>
-                    <a href="#contact" class="text-blue-900 font-semibold hover:text-blue-800 inline-flex items-center">
-                        Learn More 
-                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-xl card-hover fade-in">
-                    <div class="bg-blue-900 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Asset & Equipment Finance</h3>
-                    <p class="text-gray-600 mb-6">
-                        Finance new equipment, machinery, or vehicles to help your business operate more efficiently and grow.
-                    </p>
-                    <a href="#contact" class="text-blue-900 font-semibold hover:text-blue-800 inline-flex items-center">
-                        Learn More 
-                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-xl card-hover fade-in">
-                    <div class="bg-blue-900 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Stock/Inventory Funding</h3>
-                    <p class="text-gray-600 mb-6">
-                        Secure funding to purchase inventory, ensuring you can meet customer demand and seasonal fluctuations.
-                    </p>
-                    <a href="#contact" class="text-blue-900 font-semibold hover:text-blue-800 inline-flex items-center">
-                        Learn More 
-                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-xl card-hover fade-in">
-                    <div class="bg-blue-900 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Business Expansion Funding</h3>
-                    <p class="text-gray-600 mb-6">
-                        Take your business to the next level with funding for new locations, market expansion, or scaling operations.
-                    </p>
-                    <a href="#contact" class="text-blue-900 font-semibold hover:text-blue-800 inline-flex items-center">
-                        Learn More 
-                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-xl card-hover fade-in">
-                    <div class="bg-blue-900 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Bridging Finance Solutions</h3>
-                    <p class="text-gray-600 mb-6">
-                        Short-term financing to bridge gaps in cash flow or to take advantage of time-sensitive opportunities.
-                    </p>
-                    <a href="#contact" class="text-blue-900 font-semibold hover:text-blue-800 inline-flex items-center">
-                        Learn More 
-                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>AI Chatbots</h3>
+                    <div class="price">From R1499/mo</div>
+                    <ul class="pricing-features">
+                        <li>Custom AI Model Development</li>
+                        <li>Data Analysis & Insights</li>
+                        <li>Process Automation</li>
+                        <li>24/7 Support</li>
+                    </ul>
+                    <a href="https://aurionsa.wordpress.com/wp-content/uploads/2025/07/ai-chatbots-pricing-plan.pdf" download class="btn btn-primary">Download PDF</a>
                 </div>
 
-                <!-- New Services -->
-                <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-xl card-hover fade-in border-l-4 border-red-500">
-                    <div class="bg-red-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Sales in Execution Assistance</h3>
-                    <p class="text-gray-600 mb-6">
-                        Expert assistance to help stop sales in execution proceedings and protect your business assets from forced liquidation.
-                    </p>
-                    <a href="#contact" class="text-red-700 font-semibold hover:text-red-800 inline-flex items-center">
-                        Get Help Now
-                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
+                <div class="pricing-card featured">
+                    <h3>Web Design</h3>
+                    <div class="price">From R499/mo</div>
+                    <ul class="pricing-features">
+                        <li>Responsive Design</li>
+                        <li>CMS Integration</li>
+                        <li>SEO Optimization</li>
+                        <li>Maintenance & Support</li>
+                    </ul>
+                    <a href="https://aurionsa.wordpress.com/wp-content/uploads/2025/09/cream-minimal-social-media-strategy-pricing-table-document-1.pdf" download class="btn btn-primary">Download PDF</a>
                 </div>
 
-                <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl card-hover fade-in border-l-4 border-green-500">
-                    <div class="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m0 0h3m0 0h3a1 1 0 001-1V10M9 21v-6a1 1 0 011-1h2a1 1 0 011 1v6"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Property Equity Release</h3>
-                    <p class="text-gray-600 mb-6">
-                        Unlock the value in your paid-up properties to access capital for business growth or debt consolidation.
-                    </p>
-                    <a href="#contact" class="text-green-700 font-semibold hover:text-green-800 inline-flex items-center">
-                        Learn More
-                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
-                </div>
-
-                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-xl card-hover fade-in border-l-4 border-purple-500">
-                    <div class="bg-purple-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Debt Restructuring</h3>
-                    <p class="text-gray-600 mb-6">
-                        Comprehensive debt restructuring services to help reorganize your financial obligations and improve cash flow.
-                    </p>
-                    <a href="#contact" class="text-purple-700 font-semibold hover:text-purple-800 inline-flex items-center">
-                        Get Assessment
-                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
-                </div>
-
-                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-8 rounded-xl card-hover fade-in border-l-4 border-indigo-500">
-                    <div class="bg-indigo-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Mediation Services</h3>
-                    <p class="text-gray-600 mb-6">
-                        Professional mediation services to resolve business disputes and financial conflicts efficiently and cost-effectively.
-                    </p>
-                    <a href="#contact" class="text-indigo-700 font-semibold hover:text-indigo-800 inline-flex items-center">
-                        Schedule Mediation
-                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
+                <div class="pricing-card">
+                    <h3>Graphic Design</h3>
+                    <div class="price">From <br>R500</div>
+                    <ul class="pricing-features">
+                        <li>Brand Identity Design</li>
+                        <li>Print & Digital Materials</li>
+                        <li>Logo Design</li>
+                        <li>Unlimited Revisions</li>
+                    </ul>
+                    <a href="https://aurionsa.wordpress.com/wp-content/uploads/2025/07/graphic-design-pricing-1.pdf" download class="btn btn-primary">Download PDF</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="py-20 bg-blue-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Us</h2>
-                <p class="text-xl text-blue-200 max-w-3xl mx-auto">
-                    Comprehensive financial solutions with expert guidance and transparent approach
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center fade-in">
-                    <div class="bg-blue-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">No Upfront Fees</h3>
-                    <p class="text-blue-200 text-sm">Our fees come from our affiliates, not from you</p>
-                </div>
-                <div class="text-center fade-in">
-                    <div class="bg-blue-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Fast Processing</h3>
-                    <p class="text-blue-200 text-sm">Quick solutions for all your financial needs</p>
-                </div>
-                <div class="text-center fade-in">
-                    <div class="bg-blue-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Expert Guidance</h3>
-                    <p class="text-blue-200 text-sm">Professional advice for complex financial situations</p>
-                </div>
-                <div class="text-center fade-in">
-                    <div class="bg-blue-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Comprehensive Solutions</h3>
-                    <p class="text-blue-200 text-sm">From funding to mediation - all your needs covered</p>
-                </div>
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter for the latest updates and insights</p>
+                <form action="https://formspree.io/f/xpwrvwzr" method="POST" class="newsletter-form" id="newsletterForm">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
             </div>
         </div>
     </section>
+<script>
+document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = new FormData(form);
+  const button = form.querySelector('button');
+
+  // Show loading state
+  button.disabled = true;
+  button.innerHTML = '<span class="loader"></span> Subscribing...';
+
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      form.innerHTML = `
+        <p class="newsletter-message success">Thanks for subscribing! You'll hear from us soon.</p>
+      `;
+    } else {
+      form.innerHTML = `
+        <p class="newsletter-message error">Something went wrong. Please try again later.</p>
+      `;
+    }
+  });
+});
+</script>
+
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Ready to take your business to the next level? Contact us today for a consultation.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="fade-in">
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-center">
-                                <div class="bg-blue-900 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-900">Phone</p>
-                                    <p class="text-gray-600">069 838 2270</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="bg-blue-900 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-900">Email</p>
-                                    <p class="text-gray-600">carringtonholdings@outlook.com</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="bg-blue-900 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-900">Service Area</p>
-                                    <p class="text-gray-600">National Service (South Africa)</p>
-                                </div>
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>LET'S CONNECT</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>info@aurioncreative.com</p>
                             </div>
                         </div>
-                        <div class="mt-8 pt-8 border-t border-gray-200">
-                            <h4 class="font-semibold text-gray-900 mb-4">Contact Person</h4>
-                            <p class="text-lg font-medium text-blue-900">Lungile Sibuyi</p>
-                            <p class="text-gray-600">Business Financial Solutions Specialist</p>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p>067-286-2136</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Visit Us</h4>
+                                <p>286 Hillcrest<br>Pretoria, Gauteng</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="fade-in">
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Request a Consultation</h3>
-                        <form id="contact-form" class="space-y-6">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Business Name</label>
-                                <input 
-                                    type="text" 
-                                    name="businessName"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                    placeholder="Enter your business name"
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Contact Name</label>
-                                <input 
-                                    type="text" 
-                                    name="contactName"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                    placeholder="Enter your full name"
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                                <input 
-                                    type="email" 
-                                    name="email"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                    placeholder="Enter your email address"
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                                <input 
-                                    type="tel" 
-                                    name="phone"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                    placeholder="Enter your phone number"
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Service Type</label>
-                                <select name="serviceType" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
-                                    <option value="">Select service type</option>
-                                    <optgroup label="Funding Services">
-                                        <option value="working-capital">Working Capital Loans</option>
-                                        <option value="asset-equipment">Asset & Equipment Finance</option>
-                                        <option value="stock-inventory">Stock/Inventory Funding</option>
-                                        <option value="business-expansion">Business Expansion Funding</option>
-                                        <option value="bridging-finance">Bridging Finance Solutions</option>
-                                    </optgroup>
-                                    <optgroup label="Specialized Services">
-                                        <option value="sales-execution">Sales in Execution Assistance</option>
-                                        <option value="equity-release">Property Equity Release</option>
-                                        <option value="debt-restructuring">Debt Restructuring</option>
-                                        <option value="mediation">Mediation Services</option>
-                                    </optgroup>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                                <textarea 
-                                    rows="4"
-                                    name="message"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                    placeholder="Tell us about your specific needs"
-                                    required
-                                ></textarea>
-                            </div>
-                            <button 
-                                type="submit" 
-                                class="w-full btn-primary text-white py-3 px-6 rounded-lg font-semibold"
-                            >
-                                Request Consultation
-                            </button>
-                        </form>
+                    <div class="office-hours">
+                        <h4>OFFICE HOURS</h4>
+                        <p>Monday - Friday: 9am - 6pm<br>
+                        Saturday: 10am - 4pm<br>
+                        Sunday: Closed</p>
                     </div>
                 </div>
+  <!-- Add this before your contact form -->
+<div class="cart-section" style="display: none;" id="cartSection">
+    <h3>Your Selected Services</h3>
+    <div id="cartItems"></div>
+    <button type="button" class="btn btn-secondary" onclick="editCart()">Edit Cart</button>
+</div>
+
+<script>
+// Simple cart functionality
+let cart = [];
+
+function addToCart(service, price) {
+    cart.push({ service, price });
+    updateCartDisplay();
+}
+
+function updateCartDisplay() {
+    const cartItems = document.getElementById('cartItems');
+    const cartSection = document.getElementById('cartSection');
+    
+    if (cart.length > 0) {
+        cartSection.style.display = 'block';
+        cartItems.innerHTML = cart.map(item => 
+            `<div class="cart-item">${item.service} - R${item.price}</div>`
+        ).join('');
+    } else {
+        cartSection.style.display = 'none';
+    }
+}
+
+function editCart() {
+    cart = [];
+    updateCartDisplay();
+}
+</script>
+<!-- Add this in place of your existing contact form -->
+<div class="contact-form">
+  <form id="multiStepForm" action="https://formspree.io/f/xblynjkv" method="POST">
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+      <div id="progressStep1" class="progress-step active"></div>
+      <div id="progressStep2" class="progress-step"></div>
+    </div>
+
+<!-- Step 1 -->
+<div class="form-step" id="step1">
+  <div class="form-group">
+    <input type="text" name="name" id="name" placeholder="Your Name" required>
+    <small class="error-message"></small>
+  </div>
+  <div class="form-group">
+    <input type="email" name="email" id="email" placeholder="Your Email" required>
+    <small class="error-message"></small>
+  </div>
+  <div class="form-group">
+    <input type="text" name="company" id="company" placeholder="Company Name (Optional)">
+    <small class="error-message"></small>
+  </div>
+  <div class="form-group">
+    <input type="tel" name="phone" id="phone" placeholder="Your Phone Number" required>
+    <small class="error-message"></small>
+  </div>
+  <div class="form-group">
+    <select name="service" id="serviceSelect" required>
+      <option value="">Select Service</option>
+      <option value="AI Solutions">AI Solutions</option>
+      <option value="Web Design">Web Design</option>
+      <option value="Graphic Design">Graphic Design</option>
+      <option value="Other">Other</option>
+    </select>
+    <small class="error-message"></small>
+  </div>
+  <button type="button" class="btn btn-primary" onclick="goToStep2()">Next</button>
+</div>
+
+<!-- Step 2 -->
+<div class="form-step" id="step2" style="display: none;">
+  <div class="form-group" id="budgetGroup">
+    <input type="number" name="budget" placeholder="Your Budget" min="0" step="1" required>
+    <small class="error-message"></small>
+  </div>
+  <div class="form-group">
+    <textarea name="message" placeholder="Optional message..." rows="5"></textarea>
+    <small class="error-message"></small>
+  </div>
+  <button type="button" class="btn btn-secondary" onclick="goBackToStep1()">Back</button>
+  <button type="submit" class="btn btn-primary">Send Message</button>
+</div>
+
+  </form>
+</div>
+
+<style>
+  .progress-bar {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .progress-step {
+    flex: 1;
+    height: 5px;
+    background: #ccc;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  .progress-step.active {
+    background: #007bff;
+  }
+</style>
+
+<script>
+function goToStep2() {
+  const fields = [
+    { id: 'name', name: "Name", required: true, type: 'text' },
+    { id: 'email', name: "Email", required: true, type: 'email' },
+    { id: 'phone', name: "Phone", required: true, type: 'tel' },
+    { id: 'serviceSelect', name: "Service", required: true, type: 'select' },
+  ];
+
+  let isValid = true;
+
+  fields.forEach(field => {
+    const input = document.getElementById(field.id);
+    const errorMsg = input.parentElement.querySelector('.error-message');
+    errorMsg.textContent = '';
+
+    if (field.required) {
+      if (field.type === 'text' && !input.value.trim()) {
+        errorMsg.textContent = `${field.name} is required`;
+        isValid = false;
+      } else if (field.type === 'email' && !input.validity.valid) {
+        errorMsg.textContent = `Please enter a valid ${field.name.toLowerCase()}`;
+        isValid = false;
+      } else if (field.type === 'tel' && !input.value.trim()) {
+        errorMsg.textContent = `${field.name} is required`;
+        isValid = false;
+      } else if (field.type === 'select' && !input.value) {
+        errorMsg.textContent = `Please select a ${field.name.toLowerCase()}`;
+        isValid = false;
+      }
+    }
+  });
+
+  if (!isValid) {
+    return;
+  }
+
+  // Hide step 1, show step 2
+  document.getElementById('step1').style.display = 'none';
+  document.getElementById('step2').style.display = 'block';
+
+  // Show/hide budget based on service
+  const budgetGroup = document.getElementById('budgetGroup');
+  budgetGroup.style.display = document.getElementById('serviceSelect').value === 'Other' ? 'none' : 'block';
+
+  // Clear errors on step 2 just in case
+  document.querySelectorAll('#step2 .error-message').forEach(em => em.textContent = '');
+}
+
+function goBackToStep1() {
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('step1').style.display = 'block';
+}
+</script>
+
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <div class="logo-container mr-3" style="width: 40px; height: 40px;">
-                            <img src="https://aurionsa.wordpress.com/wp-content/uploads/2025/07/screenshot_2025-07-09_152206-removebg-preview.png" alt="Carrington Holdings Logo" />
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold">Carrington Holdings</h3>
-                            <p class="text-gray-400 text-sm">Business Financial Solutions</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 mb-4">
-                        Comprehensive financial solutions for South African businesses - from funding to debt restructuring and mediation services.
-                    </p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://aurionsa.wordpress.com/wp-content/uploads/2025/04/whatsapp_image_2025-04-08_at_15.40.02-removebg-preview-e1752063167836.png" alt="Aurion Logo" class="logo">
+                    <span class="logo-text">AURION</span>
                 </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Funding Services</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li>Working Capital Loans</li>
-                        <li>Asset & Equipment Finance</li>
-                        <li>Stock/Inventory Funding</li>
-                        <li>Business Expansion Funding</li>
-                        <li>Bridging Finance Solutions</li>
-                    </ul>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
                 </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Specialized Services</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li>Sales in Execution Assistance</li>
-                        <li>Property Equity Release</li>
-                        <li>Debt Restructuring</li>
-                        <li>Mediation Services</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Company Information</h4>
-                    <div class="space-y-2 text-gray-400 text-sm">
-                        <p>Registration Number: 2014/084889/07</p>
-                        <p>Tax Number: 99825159</p>
-                        <p>National Service (South Africa)</p>
-                    </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/aurioncreative/"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/aurion_creative/"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-gray-400">
-                    © 2024 Carrington Holdings. All rights reserved.
-                </p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aurion. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+    <script src="script.js"></script>
+    
+    <script src="https://cdn.botpress.cloud/webchat/v3.1/inject.js" defer></script>
+<script src="https://files.bpcontent.cloud/2025/07/10/06/20250710065531-EU2FXP21.js" defer></script>
+    <div class="cursor-follower"></div>
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
+<script>
+  document.addEventListener('mousemove', (e) => {
+  const dot = document.createElement('div');
+  dot.classList.add('trail-dot');
 
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+  // Detect if cursor is over a link
+  const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
+  const isHoveringLink = hoveredElement && hoveredElement.closest('a');
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+  // Change color if hovering over link
+  if (isHoveringLink) {
+    dot.style.background = '#00bcd4'; // blue for links
+    dot.style.boxShadow = '0 0 6px 2px rgba(0, 188, 212, 0.6)';
+  }
 
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+  dot.style.left = `${e.clientX}px`;
+  dot.style.top = `${e.clientY}px`;
+  document.body.appendChild(dot);
 
-        // Form submission
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Create mailto link
-            const subject = encodeURIComponent(`Business Financial Services Inquiry - ${data.serviceType}`);
-            const body = encodeURIComponent(`
-Business Name: ${data.businessName}
-Contact Name: ${data.contactName}
-Email: ${data.email}
-Phone: ${data.phone}
-Service Type: ${data.serviceType}
+  // Fade out and remove
+  setTimeout(() => {
+    dot.style.opacity = '0';
+    setTimeout(() => dot.remove(), 400); // remove after fade
+  }, 10);
+});
 
-Message:
-${data.message}
-            `);
-            
-            const mailtoLink = `mailto:carringtonholdings@outlook.com?subject=${subject}&body=${body}`;
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            alert('Thank you for your inquiry! Your email client should open with a pre-filled message. If not, please contact us directly at carringtonholdings@outlook.com or 069 838 2270.');
-        });
+</script>
+<div class="custom-cursor"></div>
+<script>
+  const cursor = document.querySelector('.custom-cursor');
 
-        // Add some initial animations
-        window.addEventListener('load', () => {
-            // Trigger initial fade-ins for elements in viewport
-            document.querySelectorAll('.fade-in').forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    el.classList.add('visible');
-                }
-            });
-        });
-    </script>
+let x = 0, y = 0;
+let targetX = 0, targetY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  targetX = e.clientX;
+  targetY = e.clientY;
+});
+
+// Smooth animation
+function animate() {
+  x += (targetX - x) * 0.15;
+  y += (targetY - y) * 0.15;
+  cursor.style.left = x + 'px';
+  cursor.style.top = y + 'px';
+  requestAnimationFrame(animate);
+}
+animate();
+
+// Grow cursor on hover
+const interactiveElements = document.querySelectorAll('a, button, .btn, input[type="submit"]');
+
+interactiveElements.forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+});
+
+</script>
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    emailjs.init("OuOiPPkFs8F68YYyH");
+  })();
+
+  document.getElementById("multiStepForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const serviceID = "service_xvdnk3y";
+    const templateID = "template_sz1jcum";
+
+    const invoiceNumber = "INV-" + Math.floor(100000 + Math.random() * 900000);
+    const today = new Date().toLocaleDateString();
+    
+    // Get form values
+    const budgetInput = document.querySelector("[name='budget']");
+    const serviceAmount = budgetInput ? budgetInput.value : "TBD";
+    const serviceType = document.getElementById("serviceSelect").value;
+
+    // Calculate amounts based on service type
+    let serviceName, unitPrice, quantity = 1;
+    
+    switch(serviceType) {
+      case "AI Solutions":
+        serviceName = "AI Solutions Package";
+        unitPrice = serviceAmount !== "TBD" ? serviceAmount : "1499";
+        break;
+      case "Web Design":
+        serviceName = "Web Design Package";
+        unitPrice = serviceAmount !== "TBD" ? serviceAmount : "499";
+        break;
+      case "Graphic Design":
+        serviceName = "Graphic Design Package";
+        unitPrice = serviceAmount !== "TBD" ? serviceAmount : "500";
+        break;
+      default:
+        serviceName = serviceType;
+        unitPrice = serviceAmount;
+    }
+
+    // ========== ENHANCED TEMPLATE PARAMS ==========
+    const templateParams = {
+      // Customer Information
+      customer_name: document.getElementById("name").value,
+      customer_email: document.getElementById("email").value,
+      customer_phone: document.getElementById("phone") ? document.getElementById("phone").value : "Provided by customer",
+      
+      // Invoice Information
+      invoice_number: invoiceNumber,
+      invoice_date: today,
+      project_reference: "PRJ-" + Math.floor(1000 + Math.random() * 9000),
+      
+      // Service Items - Enhanced with multiple services
+      service_name_1: serviceName,
+      service_description_1: getServiceDescription(serviceType),
+      quantity_1: quantity,
+      unit_price_1: formatCurrency(unitPrice),
+      amount_1: formatCurrency(serviceAmount !== "TBD" ? serviceAmount : unitPrice),
+      
+      // Additional services
+      service_name_2: "Website Maintenance & Support",
+      service_description_2: "Monthly maintenance, updates, and technical support",
+      quantity_2: 1,
+      unit_price_2: "R200",
+      amount_2: "R200",
+      
+      service_name_3: "Project Setup Fee",
+      service_description_3: "Initial project setup and configuration",
+      quantity_3: 1,
+      unit_price_3: "R500",
+      amount_3: "R500",
+      
+      // Totals
+      total: calculateTotal(serviceAmount, unitPrice),
+      
+      // Email delivery
+      to_email: document.getElementById("email").value
+    };
+
+    console.log("Sending invoice with params:", templateParams);
+
+    emailjs.send(serviceID, templateID, templateParams)
+      .then(() => {
+        alert("✅ Proforma Invoice has been sent successfully!");
+        document.getElementById("multiStepForm").reset();
+        // Reset form steps
+        document.getElementById('step1').style.display = 'block';
+        document.getElementById('step2').style.display = 'none';
+      })
+      .catch((err) => {
+        console.error("Error sending invoice:", err);
+        alert("❌ Failed to send invoice. Please try again. Check console for details.");
+      });
+  });
+</script>
+
+<script>
+// ========== EMAILJS HELPER FUNCTIONS ==========
+
+function getServiceDescription(serviceType) {
+  const descriptions = {
+    "AI Solutions": "Custom AI chatbot development and integration with machine learning capabilities",
+    "Web Design": "Responsive website design and development with modern frameworks",
+    "Graphic Design": "Custom branding, logo design, and visual identity development"
+  };
+  return descriptions[serviceType] || "Custom service solution tailored to your business needs";
+}
+
+function calculateTotal(serviceAmount, unitPrice) {
+  const mainAmount = serviceAmount !== "TBD" ? parseInt(serviceAmount) : parseInt(unitPrice);
+  const additionalAmount = 200; // From service 2 (Website Maintenance)
+  const setupFee = 500; // From service 3 (Project Setup Fee)
+  const totalAmount = mainAmount + additionalAmount + setupFee;
+  return "R" + totalAmount.toLocaleString();
+}
+
+function formatCurrency(amount) {
+  if (amount === "TBD" || !amount) return "TBD";
+  return "R" + parseInt(amount).toLocaleString();
+}
+</script>
+
 </body>
 </html>
